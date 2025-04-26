@@ -29,9 +29,9 @@
   </style>
 </head>
 <body>
-  <h1>🧱 Cobblemon Server Status</h1>
+  <h1>🔥 Typhosion Freak Fest Status</h1>
   <!--<input type="text" id="ipInput" placeholder="Enter IP (e.g. 123.45.67.89:25565)" />-->
-  <button onclick="checkStatus()">Check Status</button>
+  <button onclick="checkStatus()" style="background: red; color:white;">Check Status</button>
   <div class="result" id="statusResult"></div>
 
   <script>
@@ -54,7 +54,7 @@
           resultDiv.innerHTML = `
             ✅ <b>Online!</b><br>
             🎮 ${data.players.online}/${data.players.max} players<br>
-            📛 MOTD: ${data.motd.clean}
+            ${data.player.list}<br>
           `;
         } else {
           resultDiv.innerText = "❌ Server is offline.";
