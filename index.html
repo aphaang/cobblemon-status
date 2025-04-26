@@ -36,7 +36,7 @@
 
   <script>
     async function checkStatus() {
-      //const ip = document.getElementById("ipInput").value;
+      const ip = "97.94.120.74:25565";
       const resultDiv = document.getElementById("statusResult");
 
       //if (!ip.includes(":")) {
@@ -47,7 +47,7 @@
       resultDiv.innerText = "⏳ Checking...";
 
       try {
-        const res = await fetch(`https://api.mcstatus.io/v2/status/java/97.94.120.74:25565`);
+        const res = await fetch(`https://api.mcstatus.io/v2/status/java/${ip}`);
         const data = await res.json();
 
         if (data.online) {
