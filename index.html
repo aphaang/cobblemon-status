@@ -30,13 +30,13 @@
 </head>
 <body>
   <h1>🧱 Cobblemon Server Status</h1>
-  <input type="text" id="ipInput" placeholder="Enter IP (e.g. 123.45.67.89:25565)" />
-  <button onclick="checkStatus()">Check Status</button>
+  <!--<input type="text" id="ipInput" placeholder="Enter IP (e.g. 123.45.67.89:25565)" />-->
+  <!--<button onclick="checkStatus()">Check Status</button>-->
   <div class="result" id="statusResult"></div>
 
   <script>
     async function checkStatus() {
-      const ip = document.getElementById("ipInput").value;
+      //const ip = document.getElementById("ipInput").value;
       const resultDiv = document.getElementById("statusResult");
 
       if (!ip.includes(":")) {
@@ -47,7 +47,7 @@
       resultDiv.innerText = "⏳ Checking...";
 
       try {
-        const res = await fetch(`https://api.mcstatus.io/v2/status/java/${ip}`);
+        const res = await fetch(`https://api.mcstatus.io/v2/status/java/97.94.120.74:25565`);
         const data = await res.json();
 
         if (data.online) {
@@ -60,7 +60,7 @@
           resultDiv.innerText = "❌ Server is offline.";
         }
       } catch (err) {
-        resultDiv.innerText = "❌ Could not fetch status. Is the IP correct?";
+        resultDiv.innerText = "❌ Could not fetch status.";
       }
     }
   </script>
